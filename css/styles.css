@@ -1,0 +1,165 @@
+/* COLORS & Fonts:
+
+Light Green: #7ed56f
+Medium Green: #55c57a
+Dark Green: #28b485 
+
+font-family: 'Lato', sans-serif;
+
+*/
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+}
+
+.header{
+    height: 95vh;
+    margin: 30px;
+    background-image: linear-gradient(to right bottom,#7ed56fd0,#28b485d0),url(../images/hero.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0% 0%,100% 0%,100% 80%,0% 100%);
+}
+
+.Logo-Box{
+    position: absolute;
+    top : 40px;
+    left: 40px;
+}
+
+.Logo{
+    height: 35px;
+}
+
+.heading-box{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.header-main{
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.heading-primary{
+    display: block;
+    font-size: 60px;
+    font-weight: 400;
+    letter-spacing: 35px;
+    font-family: 'Lato-400', sans-serif;
+
+    animation: moveInLeft 0.7s ease-out;
+}  
+
+.heading-secondary{
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 17px;
+    font-family: 'Lato-400', sans-serif;
+
+    animation: moveInRight 0.7s ease-out;
+}
+
+@keyframes moveInLeft{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    80%{
+        transform: translateX(10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    80%{
+        transform: translateX(-10px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.btn:link,.btn:visited{
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 35px;
+    letter-spacing: 1px;
+    font-family: 'Lato-300', sans-serif;
+    border-radius: 100px;
+    position: relative;
+    transition: all 0.4s;
+    animation: moveInTop 0.7s ease-out;
+}
+
+.btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active{
+    transform: translateY(-1px);
+    box-shadow: 0 1px 10px rgba(0, 0, 0,0.2);
+}
+
+.btn-white{
+    color: #777;
+    background-color: white;
+}
+
+.btn::after{
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after{
+    background-color: white;
+}
+
+.btn:hover::after{
+    transform: scale(1.5);
+    opacity: 0;
+}
+
+@keyframes moveInTop{
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
